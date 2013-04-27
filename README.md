@@ -1,6 +1,6 @@
 # RxHaskell: Practical FRP for Haskell
 
-This talk will demonstrate the RxHaskell package
+This talk will demonstrate the RxHaskell library
 (http://hackage.haskell.org/package/RxHaskell) and show how it offers a powerful
 – but easy to understand – approach to functional reactive programming, with
 a specific focus on simplifying the development of GUI applications.
