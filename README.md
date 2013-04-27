@@ -11,6 +11,6 @@ UI updates when changes occur. And since native platforms typically require the
 use of a dedicated UI thread, we'll use Haskell's type system to avoid threading
 errors.
 
-Finally, with the help of the ReactiveCocoa framework, we'll take a brief look
+With the help of the ReactiveCocoa framework, we'll also take a brief look
 at a reactive FFI to Objective-C that can be used to build a completely native
 UI with minimal use of the IO monad.
