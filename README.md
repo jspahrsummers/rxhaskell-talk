@@ -1,6 +1,6 @@
 # RxHaskell: Practical FRP for Haskell
 
-Functional reactive programming (FRP) is an powerful paradigm for writing
+Functional reactive programming (FRP) is a powerful paradigm for writing
 code that reacts to change, and has been gaining significant traction as a way
 to implement GUI applications with minimal state. Although Haskell has several
 existing FRP libraries, they can be overly complex, and difficult to integrate
