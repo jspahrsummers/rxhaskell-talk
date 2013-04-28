@@ -1,16 +1,21 @@
 # RxHaskell: Practical FRP for Haskell
 
-This talk will demonstrate the RxHaskell library
-(http://hackage.haskell.org/package/RxHaskell) and show how it offers a powerful
-– but easy to understand – approach to functional reactive programming, with
-a specific focus on simplifying the development of GUI applications.
+Functional reactive programming (FRP) is an powerful paradigm for writing
+code that reacts to change, and has been gaining significant traction as a way
+to implement GUI applications with minimal state. Although Haskell has several
+existing FRP libraries, they can be overly complex, and difficult to integrate
+with native UI frameworks.
 
-RxHaskell makes it very easy to interleave imperative logic when desired, which
-we'll use to turn foreign function calls into lazy signals, and perform stateful
-UI updates when changes occur. And since native platforms typically require the
-use of a dedicated UI thread, we'll use Haskell's type system to avoid threading
-errors.
+This talk introduces RxHaskell (http://hackage.haskell.org/package/RxHaskell),
+an FRP library inspired by Microsoft's Reactive Extensions for .NET
+(http://msdn.microsoft.com/en-us/library/hh242985(v=VS.103).aspx) and designed
+specifically with GUI programming in mind.
 
-With the help of the ReactiveCocoa framework, we'll also take a brief look
-at a reactive FFI to Objective-C that can be used to build a completely native
-UI with minimal use of the IO monad.
+Compared to existing solutions, RxHaskell focuses more on ease-of-use and
+practicality than absolute conceptual purity. We'll see that side effects are
+particularly easy to capture, making it straightforward to interleave UI updates
+and foreign function calls in otherwise pure code.
+
+With the help of the ReactiveCocoa framework in Objective-C, we'll also take
+a brief look at how a parallel Rx implementation in foreign code can be used to
+build an FFI that lives outside of the IO monad, even for side-effecting calls.
