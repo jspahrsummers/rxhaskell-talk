@@ -2,20 +2,28 @@
 
 Functional reactive programming (FRP) is a powerful paradigm for writing
 code that reacts to change, and has been gaining significant traction as a way
-to implement GUI applications with minimal state. Although Haskell has several
-existing FRP libraries, they can be overly complex, and difficult to integrate
-with native UI frameworks.
+to implement GUI applications with minimal state.
 
-This talk demonstrates how RxHaskell (http://hackage.haskell.org/package/RxHaskell) –
-an FRP library inspired by Microsoft's Reactive Extensions for .NET
+Haskell has a few existing FRP libraries that are commonly used for GUI
+programming; however, all of them currently target cross-platform widget
+toolkits, like GTK+ or wxWidgets. Native frameworks (like Cocoa or WPF) have
+remained highly imperative, and out of place in the FRP model.
+
+This talk introduces RxHaskell (http://hackage.haskell.org/package/RxHaskell) –
+a library for functional reactive programming inspired by Microsoft's Reactive Extensions for .NET
 (http://msdn.microsoft.com/en-us/library/hh242985(v=VS.103).aspx) and designed
-specifically with GUI programming in mind – solves these problems.
+specifically for integration with native frameworks.
 
-Compared to existing solutions, RxHaskell focuses more on ease-of-use and
-practicality than absolute conceptual purity. We'll see that side effects are
-particularly easy to capture, making it straightforward to interleave UI updates
-and foreign function calls in otherwise pure code.
+RxHaskell simplifies the traditional FRP model by omitting continuous behaviors and
+discarding values after they've been processed (enabling switching without time
+leaks), both of which make it easier to interleave impure code.
 
-With the help of the ReactiveCocoa framework in Objective-C, we'll also take
-a brief look at how RxHaskell and an Rx implementation in foreign code can be
-combined into a fully reactive FFI, making native applications even easier to create.
+And because native frameworks often require UI changes to be made on a dedicated
+OS thread, RxHaskell provides a Scheduler type (an abstraction over threads)
+which uses Haskell's type system to statically guarantee that side effects
+aren't executed concurrently.
+
+We'll also take a brief look at how RxHaskell can be bridged to ReactiveCocoa,
+an Rx implementation in Objective-C, to break down the barriers between two very
+different programming languages, and support amazing native development without
+giving way to completely imperative programming.
