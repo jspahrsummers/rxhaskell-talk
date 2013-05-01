@@ -14,9 +14,9 @@ a library for functional reactive programming inspired by Microsoft's Reactive E
 (http://msdn.microsoft.com/en-us/library/hh242985(v=VS.103).aspx) and designed
 specifically for integration with native frameworks.
 
-RxHaskell simplifies the traditional FRP model by omitting continuous behaviors and
-discarding values after they've been processed (enabling switching without time
-leaks), both of which make it easier to interleave impure code.
+Rx and RxHaskell simplify the traditional FRP model by omitting continuous behaviors, and
+discarding values after they've been processed (which enables switching without time
+leaks). These changes make it easier to interleave impure code.
 
 And because native frameworks often require UI changes to be made on a dedicated
 OS thread, RxHaskell provides a "scheduler" abstraction that uses Haskell's
