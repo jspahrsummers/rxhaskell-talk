@@ -1,4 +1,4 @@
-# RxHaskell: Practical FRP for Haskell
+# Effectful Functional Reactive Programming with RxHaskell
 
 Functional reactive programming (FRP) is a powerful paradigm for writing
 code that reacts to change, and has been gaining significant traction as a way
