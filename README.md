@@ -19,9 +19,11 @@ discarding values after they've been processed (which enables switching without 
 leaks). These changes make it easier to interleave impure code.
 
 And because native frameworks often require UI changes to be made on a dedicated
-OS thread, RxHaskell provides a "scheduler" abstraction that uses Haskell's
-type system to statically guarantee whether a function's side effects run on the
-main thread or in the background.
+OS thread, RxHaskell provides a "scheduler" abstraction which uses Haskell's
+type system to offer static guarantees about concurrency. Functions can be
+annotated as running on the main thread or in the background, and an action of
+one type cannot be directly executed from the other, preventing some classes of
+threading error.
 
 We'll also take a brief look at how RxHaskell can be bridged to ReactiveCocoa,
 an Rx implementation in Objective-C, to break down the barriers between two very
